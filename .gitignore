@@ -1,0 +1,8 @@
+# Privado: precios, recibos, correos y notas internas. Solo se publica docs/ (sin precios) y scripts/.
+data/
+inbox/
+recibos/
+CLAUDE.md
+.claude/
+__pycache__/
+.DS_Store

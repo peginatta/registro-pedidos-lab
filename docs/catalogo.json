@@ -1,0 +1,567 @@
+[
+  {
+    "id": "mtt",
+    "keywords": [
+      "mtt",
+      "thiazolyl",
+      "tetrazolium"
+    ],
+    "nombre": "THIAZOLYL BLUE TETRAZOLIUM BROMIDE (MTT)",
+    "ref": "M5655-500MG",
+    "proveedor": "MERCK LIFE SCIENCE S.L.U.",
+    "casaComercial": "MERCK"
+  },
+  {
+    "id": "dmem",
+    "keywords": [
+      "dmem"
+    ],
+    "nombre": "DMEM 4500mg/L glucose + L-Glutamine 500ml",
+    "ref": "a341966029",
+    "proveedor": "TEKNOVAS, S.A.",
+    "casaComercial": "TEKNOVAS"
+  },
+  {
+    "id": "falcon15",
+    "keywords": [
+      "falcon 15",
+      "centrifuga 15",
+      "tubo centrífuga 15"
+    ],
+    "nombre": "Tubo centrífuga cónico 15ml Falcon (caja 500 uds)",
+    "ref": "430791",
+    "proveedor": "TEKNOVAS, S.A.",
+    "casaComercial": "TEKNOVAS"
+  },
+  {
+    "id": "falcon50",
+    "keywords": [
+      "falcon 50",
+      "centrifuga 50",
+      "tubo centrífuga 50"
+    ],
+    "nombre": "Tubo centrífuga 50ml Falcon (20 bolsas x 25 tubos)",
+    "ref": "352070",
+    "proveedor": "TEKNOVAS, S.A.",
+    "casaComercial": "TEKNOVAS"
+  },
+  {
+    "id": "pipeta5",
+    "keywords": [
+      "pipeta 5",
+      "pipeta serológica 5"
+    ],
+    "nombre": "Pipeta serológica 5ml PS estéril (200 uds)",
+    "ref": "004487",
+    "proveedor": "TEKNOVAS, S.A.",
+    "casaComercial": "TEKNOVAS"
+  },
+  {
+    "id": "pipeta10",
+    "keywords": [
+      "pipeta 10",
+      "pipeta serológica 10"
+    ],
+    "nombre": "Pipeta serológica 10ml PS estéril (200 uds)",
+    "ref": "004488",
+    "proveedor": "TEKNOVAS, S.A.",
+    "casaComercial": "TEKNOVAS"
+  },
+  {
+    "id": "pipeta25",
+    "keywords": [
+      "pipeta 25",
+      "pipeta serológica 25"
+    ],
+    "nombre": "Pipeta serológica 25ml PS estéril (200 uds)",
+    "ref": "004489",
+    "proveedor": "TEKNOVAS, S.A.",
+    "casaComercial": "TEKNOVAS"
+  },
+  {
+    "id": "pbs_gibco",
+    "keywords": [
+      "pbs gibco",
+      "pbs life"
+    ],
+    "nombre": "PBS, pH 7.4 (Gibco)",
+    "ref": "10010031",
+    "proveedor": "LIFE TECHNOLOGIES S.A",
+    "casaComercial": "LIFE TECHNOLOGIES"
+  },
+  {
+    "id": "pbs_teknovas",
+    "keywords": [
+      "pbs teknovas"
+    ],
+    "nombre": "PBS pH 7.4 1x 500ml",
+    "ref": "a310010015",
+    "proveedor": "TEKNOVAS, S.A.",
+    "casaComercial": "TEKNOVAS"
+  },
+  {
+    "id": "dpbs",
+    "keywords": [
+      "dpbs"
+    ],
+    "nombre": "DPBS -CaCl2 -MgCl2 500ml",
+    "ref": "a314190094",
+    "proveedor": "TEKNOVAS, S.A.",
+    "casaComercial": "TEKNOVAS"
+  },
+  {
+    "id": "fbs",
+    "keywords": [
+      "fbs",
+      "fetal bovine serum"
+    ],
+    "nombre": "Fetal Bovine Serum 500ml",
+    "ref": "a3a5256701",
+    "proveedor": "TEKNOVAS, S.A.",
+    "casaComercial": "TEKNOVAS"
+  },
+  {
+    "id": "fbs_hi",
+    "keywords": [
+      "fbs hi",
+      "fbs inactivated",
+      "heat inactivated",
+      "value hi fbs"
+    ],
+    "nombre": "Value HI FBS (Heat Inactivated) 500ml",
+    "ref": "a3a5256801",
+    "proveedor": "TEKNOVAS, S.A.",
+    "casaComercial": "TEKNOVAS"
+  },
+  {
+    "id": "penstrep",
+    "keywords": [
+      "penicilina",
+      "estreptomicina",
+      "pen/strep"
+    ],
+    "nombre": "Penicilina/Estreptomicina 10000 U/ml",
+    "ref": "a315140122",
+    "proveedor": "TEKNOVAS, S.A.",
+    "casaComercial": "TEKNOVAS"
+  },
+  {
+    "id": "sybr",
+    "keywords": [
+      "sybr green"
+    ],
+    "nombre": "iQ SYBR Green Supermix 10x1.25ml",
+    "ref": "d61708882",
+    "proveedor": "TEKNOVAS, S.A.",
+    "casaComercial": "TEKNOVAS"
+  },
+  {
+    "id": "flask75",
+    "keywords": [
+      "flask 75",
+      "frasco 75",
+      "t75"
+    ],
+    "nombre": "Frasco cultivo 75cm² TC tapón ventilado (100 uds)",
+    "ref": "00430641u",
+    "proveedor": "TEKNOVAS, S.A.",
+    "casaComercial": "TEKNOVAS"
+  },
+  {
+    "id": "flask25",
+    "keywords": [
+      "flask 25",
+      "frasco 25",
+      "t25"
+    ],
+    "nombre": "Frasco cultivo 25cm² TC tapón rosca (200 uds)",
+    "ref": "353082",
+    "proveedor": "TEKNOVAS, S.A.",
+    "casaComercial": "TEKNOVAS"
+  },
+  {
+    "id": "microplaca96",
+    "keywords": [
+      "microplaca",
+      "96 pocillos",
+      "placa 96"
+    ],
+    "nombre": "Microplaca 96 pocillos PS TC fondo plano estéril (50 uds)",
+    "ref": "353072",
+    "proveedor": "TEKNOVAS, S.A.",
+    "casaComercial": "TEKNOVAS"
+  },
+  {
+    "id": "filtro_pes",
+    "keywords": [
+      "filtro pes",
+      "unidad filtro"
+    ],
+    "nombre": "Unidades filtro PES desechables 500ml 0.22µm",
+    "ref": "15913307",
+    "proveedor": "FISHER SCIENTIFIC, S.L.",
+    "casaComercial": "FISHER SCIENTIFIC"
+  },
+  {
+    "id": "scraper",
+    "keywords": [
+      "scraper",
+      "cell scraper"
+    ],
+    "nombre": "Cell scraper movable blade 300mm (x100)",
+    "ref": "330099",
+    "proveedor": "TEKNOVAS, S.A.",
+    "casaComercial": "TEKNOVAS"
+  },
+  {
+    "id": "rpmi",
+    "keywords": [
+      "rpmi"
+    ],
+    "nombre": "RPMI 1640 + L-Glutamine 500ml",
+    "ref": "a321875034",
+    "proveedor": "TEKNOVAS, S.A.",
+    "casaComercial": "TEKNOVAS"
+  },
+  {
+    "id": "schneider",
+    "keywords": [
+      "schneider",
+      "drosophila"
+    ],
+    "nombre": "Medio Drosophila de Schneider",
+    "ref": "a321720024",
+    "proveedor": "TEKNOVAS, S.A.",
+    "casaComercial": "TEKNOVAS"
+  },
+  {
+    "id": "dmso",
+    "keywords": [
+      "dmso",
+      "dimethyl sulfoxide"
+    ],
+    "nombre": "DMSO puriss. p.a. 1L",
+    "ref": "34943-1L-M",
+    "proveedor": "MERCK LIFE SCIENCE S.L.U.",
+    "casaComercial": "MERCK"
+  },
+  {
+    "id": "eppendorf2ml",
+    "keywords": [
+      "eppendorf 2ml",
+      "eppendorf graduado"
+    ],
+    "nombre": "Tubos Eppendorf graduados 2ml (C/500)",
+    "ref": "525-1136",
+    "proveedor": "COMERCIAL MEDICA Y DE LABORATORIO, S.L.",
+    "casaComercial": "COMERCIAL MEDICA"
+  },
+  {
+    "id": "tips_10",
+    "keywords": [
+      "puntas 10",
+      "filter tips 10",
+      "tips 10"
+    ],
+    "nombre": "Filter tips 10µl low retention Neptune rack x960",
+    "ref": "711177n",
+    "proveedor": "TEKNOVAS, S.A.",
+    "casaComercial": "TEKNOVAS"
+  },
+  {
+    "id": "tips_20",
+    "keywords": [
+      "puntas 20",
+      "filter tips 20",
+      "tips 20"
+    ],
+    "nombre": "Filter tips 20µl low retention Neptune rack x960",
+    "ref": "711178n",
+    "proveedor": "TEKNOVAS, S.A.",
+    "casaComercial": "TEKNOVAS"
+  },
+  {
+    "id": "tips_100",
+    "keywords": [
+      "puntas 100",
+      "filter tips 100",
+      "tips 100"
+    ],
+    "nombre": "Filter tips 100µl S3 low retention Neptune rack x960",
+    "ref": "711179n",
+    "proveedor": "TEKNOVAS, S.A.",
+    "casaComercial": "TEKNOVAS"
+  },
+  {
+    "id": "tips_1250",
+    "keywords": [
+      "puntas 1250",
+      "tips 1250"
+    ],
+    "nombre": "Puntas con filtro 1250µl Neptune BT1250N",
+    "ref": "713080n",
+    "proveedor": "TEKNOVAS, S.A.",
+    "casaComercial": "TEKNOVAS"
+  },
+  {
+    "id": "hepes_buffer",
+    "keywords": [
+      "hepes buffer",
+      "hepes 1m"
+    ],
+    "nombre": "HEPES Buffer 1M 100ml",
+    "ref": "8288616",
+    "proveedor": "PROQUINORTE, S.A.",
+    "casaComercial": "PROQUINORTE"
+  },
+  {
+    "id": "hepes_sodium",
+    "keywords": [
+      "hepes sodium",
+      "hepes sal"
+    ],
+    "nombre": "HEPES Sodium Salt >99.5% 500g",
+    "ref": "H7006-500G",
+    "proveedor": "MERCK LIFE SCIENCE S.L.U.",
+    "casaComercial": "MERCK"
+  },
+  {
+    "id": "biopterina",
+    "keywords": [
+      "biopterina"
+    ],
+    "nombre": "6-Biopterina 5mg",
+    "ref": "B2517-5MG",
+    "proveedor": "MERCK LIFE SCIENCE S.L.U.",
+    "casaComercial": "MERCK"
+  },
+  {
+    "id": "trypan",
+    "keywords": [
+      "trypan",
+      "tripano",
+      "azul tripano"
+    ],
+    "nombre": "Solución azul de tripano 0.4% 100ml",
+    "ref": "T8154-100ML",
+    "proveedor": "MERCK LIFE SCIENCE S.L.U.",
+    "casaComercial": "MERCK"
+  },
+  {
+    "id": "hardshell96",
+    "keywords": [
+      "hardshell",
+      "96w low skrtd"
+    ],
+    "nombre": "Hardshell 96W low skrtd WHT/CLR",
+    "ref": "d6hsp9601",
+    "proveedor": "TEKNOVAS, S.A.",
+    "casaComercial": "TEKNOVAS"
+  },
+  {
+    "id": "maxwell_rna",
+    "keywords": [
+      "maxwell",
+      "simplyrna"
+    ],
+    "nombre": "Maxwell RSC simplyRNA Tissue Kit",
+    "ref": "AS1340",
+    "proveedor": "PROMEGA BIOTECH IBERICA, S.L.",
+    "casaComercial": "PROMEGA"
+  },
+  {
+    "id": "superscript",
+    "keywords": [
+      "superscript"
+    ],
+    "nombre": "SuperScript II Reverse Transcriptase",
+    "ref": "18064014",
+    "proveedor": "LIFE TECHNOLOGIES S.A",
+    "casaComercial": "LIFE TECHNOLOGIES"
+  },
+  {
+    "id": "dnase_free",
+    "keywords": [
+      "dna-free",
+      "dnase free",
+      "dna removal"
+    ],
+    "nombre": "DNA-free DNA Removal Kit",
+    "ref": "AM1906",
+    "proveedor": "LIFE TECHNOLOGIES S.A",
+    "casaComercial": "LIFE TECHNOLOGIES"
+  },
+  {
+    "id": "random_primers",
+    "keywords": [
+      "random primers"
+    ],
+    "nombre": "Random Primers",
+    "ref": "48190011",
+    "proveedor": "LIFE TECHNOLOGIES S.A",
+    "casaComercial": "LIFE TECHNOLOGIES"
+  },
+  {
+    "id": "rnalater",
+    "keywords": [
+      "rnalater"
+    ],
+    "nombre": "RNAlater Stabilization Solution",
+    "ref": "AM7020",
+    "proveedor": "LIFE TECHNOLOGIES S.A",
+    "casaComercial": "LIFE TECHNOLOGIES"
+  },
+  {
+    "id": "amplitaq",
+    "keywords": [
+      "amplitaq"
+    ],
+    "nombre": "AmpliTaq DNA Polymerase with Buffer II",
+    "ref": "N8080161",
+    "proveedor": "LIFE TECHNOLOGIES S.A",
+    "casaComercial": "LIFE TECHNOLOGIES"
+  },
+  {
+    "id": "rnase_inhibitor",
+    "keywords": [
+      "rnase inhibitor",
+      "n8080119"
+    ],
+    "nombre": "RNase Inhibitor",
+    "ref": "N8080119",
+    "proveedor": "LIFE TECHNOLOGIES S.A",
+    "casaComercial": "LIFE TECHNOLOGIES"
+  },
+  {
+    "id": "rnaseout",
+    "keywords": [
+      "rnase out",
+      "rnaseout",
+      "ribonuclease"
+    ],
+    "nombre": "RNaseOUT Ribonuclease Inhibitor",
+    "ref": "a310777019",
+    "proveedor": "TEKNOVAS, S.A.",
+    "casaComercial": "TEKNOVAS"
+  },
+  {
+    "id": "mmlv",
+    "keywords": [
+      "mmlv",
+      "reverse transcripta"
+    ],
+    "nombre": "MMLV Reverse Transcriptase",
+    "ref": "a328025013",
+    "proveedor": "TEKNOVAS, S.A.",
+    "casaComercial": "TEKNOVAS"
+  },
+  {
+    "id": "filtro_vacio",
+    "keywords": [
+      "filtración vacío",
+      "filtracion vacio",
+      "431097"
+    ],
+    "nombre": "Sistema filtración vacío 500ml PES 0.22µm (12 uds)",
+    "ref": "431097",
+    "proveedor": "TEKNOVAS, S.A.",
+    "casaComercial": "TEKNOVAS"
+  },
+  {
+    "id": "biotin",
+    "keywords": [
+      "biotin"
+    ],
+    "nombre": "Biotin powder BioReagent 100mg",
+    "ref": "B4639-100MG",
+    "proveedor": "MERCK LIFE SCIENCE S.L.U.",
+    "casaComercial": "MERCK"
+  },
+  {
+    "id": "hemin",
+    "keywords": [
+      "hemin"
+    ],
+    "nombre": "Hemin, Bovine 1g",
+    "ref": "H9039-1G",
+    "proveedor": "MERCK LIFE SCIENCE S.L.U.",
+    "casaComercial": "MERCK"
+  },
+  {
+    "id": "lectina",
+    "keywords": [
+      "lectina",
+      "arachis"
+    ],
+    "nombre": "Lectina de cacahuete (Arachis hypogaea) 10mg",
+    "ref": "L0881-10MG",
+    "proveedor": "MERCK LIFE SCIENCE S.L.U.",
+    "casaComercial": "MERCK"
+  },
+  {
+    "id": "medio199",
+    "keywords": [
+      "medio 199",
+      "m199"
+    ],
+    "nombre": "Medio 199 con sales de Hank 10x1L",
+    "ref": "M0393-10X1L",
+    "proveedor": "MERCK LIFE SCIENCE S.L.U.",
+    "casaComercial": "MERCK"
+  },
+  {
+    "id": "neubauer",
+    "keywords": [
+      "neubauer"
+    ],
+    "nombre": "Cámara de recuento Neubauer optimizada doble",
+    "ref": "140514",
+    "proveedor": "TEKNOVAS, S.A.",
+    "casaComercial": "TEKNOVAS"
+  },
+  {
+    "id": "chamberslide",
+    "keywords": [
+      "portaobjeto cultivo",
+      "chamber slide",
+      "354118"
+    ],
+    "nombre": "Portaobjeto cultivo 8 cámaras (12 paq x 2 uds)",
+    "ref": "354118",
+    "proveedor": "TEKNOVAS, S.A.",
+    "casaComercial": "TEKNOVAS"
+  },
+  {
+    "id": "dntp",
+    "keywords": [
+      "dntp"
+    ],
+    "nombre": "Conjunto dNTP 100mM",
+    "ref": "a310297018",
+    "proveedor": "TEKNOVAS, S.A.",
+    "casaComercial": "TEKNOVAS"
+  },
+  {
+    "id": "mmlv_buffer",
+    "keywords": [
+      "tampón transcriptasa",
+      "mmlv buffer"
+    ],
+    "nombre": "Tampón de transcriptasa inversa MMLV",
+    "ref": "a318057018",
+    "proveedor": "TEKNOVAS, S.A.",
+    "casaComercial": "TEKNOVAS"
+  },
+  {
+    "id": "aqua_stabil",
+    "keywords": [
+      "aqua stabil",
+      "aqua stabila",
+      "sulfato de cobre"
+    ],
+    "nombre": "Aqua Stabil 100ml (sulfato de cobre)",
+    "ref": "8940006",
+    "proveedor": "COMERCIAL MEDICA Y DE LABORATORIO, S.L.",
+    "casaComercial": "COMERCIAL MEDICA"
+  }
+]

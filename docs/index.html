@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pedidos de laboratorio</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🧪</text></svg>">
+<style>
+  :root {
+    --bg: #f6f5f3; --surface: #ffffff; --surface-2: #f1efec; --border: #e5e2dd;
+    --text: #1c1917; --muted: #78716c; --faint: #a8a29e;
+    --accent: #0f766e; --accent-soft: #ccfbf1; --accent-ink: #134e4a;
+    --pend: #b45309; --pend-soft: #fef3c7;
+    --ped: #1d4ed8; --ped-soft: #dbeafe;
+    --rec: #15803d; --rec-soft: #dcfce7;
+    --warn: #b91c1c; --warn-soft: #fee2e2;
+    --mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #141312; --surface: #1d1b1a; --surface-2: #262422; --border: #34312e;
+      --text: #f5f5f4; --muted: #a8a29e; --faint: #78716c;
+      --accent: #2dd4bf; --accent-soft: #134e4a; --accent-ink: #99f6e4;
+      --pend: #fbbf24; --pend-soft: #422006;
+      --ped: #93c5fd; --ped-soft: #1e3a8a;
+      --rec: #86efac; --rec-soft: #14532d;
+      --warn: #fca5a5; --warn-soft: #450a0a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+    font: 14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif; }
+  main { max-width: 920px; margin: 0 auto; padding: 24px 16px 64px; }
+  header { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+  h1 { font-size: 22px; margin: 0; letter-spacing: -0.01em; }
+  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 28px 0 10px; display: flex; gap: 8px; align-items: center; }
+  .sub { color: var(--muted); font-size: 12px; margin-top: 2px; }
+  .stats { display: flex; gap: 8px; flex-wrap: wrap; }
+  .stat { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 8px 12px; min-width: 92px; }
+  .stat b { display: block; font-size: 20px; font-variant-numeric: tabular-nums; }
+  .stat span { font-size: 11px; color: var(--muted); }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
+  .howto { display: flex; gap: 14px; align-items: center; justify-content: space-between; flex-wrap: wrap; background: var(--accent-soft); border-color: transparent; color: var(--accent-ink); }
+  .howto p { margin: 0; max-width: 560px; }
+  code { font-family: var(--mono); font-size: 12px; }
+  .btn { appearance: none; border: 1px solid var(--border); background: var(--surface); color: var(--text); border-radius: 8px;
+    padding: 6px 12px; font: inherit; font-size: 13px; cursor: pointer; text-decoration: none; display: inline-flex; gap: 6px; align-items: center; white-space: nowrap; }
+  .btn:hover { border-color: var(--accent); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  :root:not([data-theme="light"]) .btn.primary { color: var(--bg); }
+  .btn.small { padding: 3px 8px; font-size: 12px; }
+  .prov { margin-bottom: 14px; }
+  .prov:last-child { margin-bottom: 0; }
+  .prov-head { display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 13px; margin-bottom: 6px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { font-family: var(--mono); font-size: 12px; padding: 4px 9px; border-radius: 6px; background: var(--surface-2); border: 1px solid var(--border); cursor: pointer; color: var(--text); }
+  .chip small { opacity: .6; }
+  .chip.ok { background: var(--rec); border-color: var(--rec); color: var(--surface); }
+  .toolbar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 12px; }
+  .toolbar input[type=search] { flex: 1; min-width: 180px; }
+  input, select { font: inherit; font-size: 13px; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--text); }
+  .seg { display: inline-flex; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .seg button { border: 0; background: var(--surface); color: var(--muted); padding: 6px 10px; font: inherit; font-size: 12px; cursor: pointer; }
+  .seg button.on { background: var(--accent); color: #fff; }
+  .day { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin: 18px 0 6px 2px; }
+  .row { display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; background: var(--surface);
+    border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; margin-bottom: 6px; }
+  .row.recibido { opacity: .62; }
+  .row.revisar { border-color: var(--warn); }
+  .prod { font-weight: 600; font-size: 13px; overflow-wrap: anywhere; }
+  .meta { font-size: 12px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 10px; margin-top: 2px; }
+  .meta .ref { font-family: var(--mono); color: var(--text); }
+  .warn { color: var(--warn); }
+  .badge { font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 999px; white-space: nowrap; user-select: none; }
+  .badge.pendiente { background: var(--pend-soft); color: var(--pend); }
+  .badge.pedido { background: var(--ped-soft); color: var(--ped); }
+  .badge.recibido { background: var(--rec-soft); color: var(--rec); }
+  .editable .badge { cursor: pointer; }
+  .right { display: flex; gap: 8px; align-items: center; justify-content: flex-end; }
+  .qty { font-variant-numeric: tabular-nums; font-weight: 600; min-width: 36px; text-align: right; }
+  .qty input { width: 58px; text-align: right; }
+  .price { font-variant-numeric: tabular-nums; font-size: 12px; color: var(--muted); text-align: right; min-width: 70px; }
+  .del { border: 0; background: none; color: var(--faint); cursor: pointer; font-size: 16px; padding: 2px 4px; }
+  .del:hover { color: var(--warn); }
+  .empty { color: var(--muted); font-size: 13px; padding: 8px 2px; }
+  .catalog { margin-top: 8px; max-height: 280px; overflow: auto; }
+  .catalog button { display: block; width: 100%; text-align: left; border: 0; border-bottom: 1px solid var(--border); background: none; color: var(--text); padding: 8px 4px; font: inherit; font-size: 13px; cursor: pointer; }
+  .catalog button:hover { background: var(--surface-2); }
+  .local-only { display: none; }
+  body.local .local-only { display: revert; }
+  body.local .public-only { display: none; }
+  .pill { font-size: 11px; padding: 2px 8px; border-radius: 999px; background: var(--surface-2); color: var(--muted); font-weight: 500; text-transform: none; letter-spacing: 0; }
+  @media (max-width: 560px) {
+    .row { grid-template-columns: 1fr auto; }
+    .row > :first-child { grid-column: 1 / -1; justify-self: start; }
+    .price { display: none; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div>
+      <h1>Pedidos de laboratorio</h1>
+      <div class="sub" id="actualizado">Cargando…</div>
+    </div>
+    <div class="stats" id="stats"></div>
+  </header>
+
+  <div class="card howto">
+    <p><b>¿Quieres pedir algo?</b> Mándame un correo con <code>[pedido]</code> en el asunto, un producto por línea
+      (nombre, cantidad y, si la sabes, la referencia). Los viernes lo busco, lo añado aquí y hago la compra.</p>
+    <a class="btn primary" id="mailto" href="#">✉️ Escribir pedido</a>
+  </div>
+
+  <h2>Para comprar el viernes <span class="pill" id="n-viernes"></span></h2>
+  <div class="card" id="viernes"></div>
+
+  <div id="revisar-wrap" style="display:none">
+    <h2 class="warn">Por revisar</h2>
+    <div id="revisar"></div>
+  </div>
+
+  <h2>Histórico</h2>
+  <div class="toolbar">
+    <input type="search" id="q" placeholder="Buscar producto, referencia, proveedor u OC…">
+    <div class="seg" id="filtro">
+      <button data-f="todos" class="on">Todos</button>
+      <button data-f="pendiente">Pendiente</button>
+      <button data-f="pedido">Pedido</button>
+      <button data-f="recibido">Recibido</button>
+    </div>
+    <button class="btn local-only" id="btn-add">+ Añadir del catálogo</button>
+  </div>
+  <div class="card local-only" id="add-box" style="display:none;margin-bottom:12px">
+    <input type="search" id="cat-q" placeholder="Buscar en el catálogo…" style="width:100%">
+    <div class="catalog" id="cat-list"></div>
+  </div>
+  <div id="lista"></div>
+
+  <div class="local-only">
+    <h2>Gasto por proveedor <span class="pill">sin IVA · solo local</span></h2>
+    <div class="card" id="gasto"></div>
+  </div>
+</main>
+
+<script>
+const CONTACTO = "pginatta@unav.es";
+const ESTADOS = ["pendiente", "pedido", "recibido"];
+const ETIQUETA = { pendiente: "Pendiente", pedido: "Pedido", recibido: "Recibido" };
+let pedidos = [], catalogo = [], local = false, filtro = "todos";
+
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const eur = (n) => n == null ? "" : n.toLocaleString("es-ES", { style: "currency", currency: "EUR" });
+const fechaLarga = (f) => new Date(f + "T12:00:00").toLocaleDateString("es-ES", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
+const corta = (f) => f ? new Date(f + "T12:00:00").toLocaleDateString("es-ES", { day: "numeric", month: "short" }) : "";
+
+function copiar(texto) {
+  if (navigator.clipboard?.writeText) navigator.clipboard.writeText(texto).catch(() => copiarFallback(texto));
+  else copiarFallback(texto);
+}
+function copiarFallback(texto) {
+  const ta = document.createElement("textarea");
+  ta.value = texto; ta.style.position = "fixed"; ta.style.left = "-9999px";
+  document.body.appendChild(ta); ta.select();
+  try { document.execCommand("copy"); } catch {}
+  ta.remove();
+}
+function flash(el) {
+  const old = el.innerHTML; el.classList.add("ok"); el.textContent = "✓ copiado";
+  setTimeout(() => { el.classList.remove("ok"); el.innerHTML = old; }, 1200);
+}
+
+async function guardar() {
+  if (!local) return;
+  await fetch("/api/pedidos", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(pedidos) });
+}
+
+function porProveedor(lista) {
+  const g = {};
+  for (const p of lista) (g[p.casaComercial || "Sin proveedor"] ||= []).push(p);
+  return Object.entries(g).sort(([a], [b]) => a.localeCompare(b));
+}
+
+function renderStats() {
+  const n = (e) => pedidos.filter((p) => p.estado === e).length;
+  const gasto = pedidos.reduce((s, p) => s + (p.importe || 0), 0);
+  $("#stats").innerHTML =
+    `<div class="stat"><b>${n("pendiente")}</b><span>pendientes</span></div>` +
+    `<div class="stat"><b>${n("pedido")}</b><span>en camino</span></div>` +
+    `<div class="stat"><b>${n("recibido")}</b><span>recibidos</span></div>` +
+    (local ? `<div class="stat"><b>${eur(gasto).replace(/,\d\d/, "")}</b><span>gastado (sin IVA)</span></div>` : "");
+}
+
+function renderViernes() {
+  const pend = pedidos.filter((p) => p.estado === "pendiente" && p.ref && !p.revisar);
+  $("#n-viernes").textContent = pend.length ? `${pend.length} artículos` : "";
+  if (!pend.length) { $("#viernes").innerHTML = `<div class="empty">Nada pendiente. 🎉</div>`; return; }
+  $("#viernes").innerHTML = porProveedor(pend).map(([prov, items]) => `
+    <div class="prov">
+      <div class="prov-head"><span>${esc(prov)}</span>
+        <button class="btn small" data-copy-prov="${esc(prov)}">Copiar refs</button></div>
+      <div class="chips">${items.map((p) =>
+        `<button class="chip" data-copy="${esc(p.ref)}" title="${esc(p.producto)}">${esc(p.ref)} <small>×${p.cantidad}</small></button>`).join("")}
+      </div>
+    </div>`).join("");
+}
+
+function fila(p) {
+  const meta = [
+    p.ref ? `<span class="ref">${esc(p.ref)}</span>` : `<span class="warn">sin referencia</span>`,
+    esc(p.casaComercial),
+    p.oc ? `${esc(p.oc)}${p.entregaPrevista && p.estado === "pedido" ? ` · entrega ${corta(p.entregaPrevista)}` : ""}` : "",
+    p.cantidadOC != null && p.cantidadOC !== p.cantidad ? `<span class="warn">OC: ×${p.cantidadOC}</span>` : "",
+    p.notas ? `<span>${esc(p.notas)}</span>` : "",
+    p.revisar ? `<span class="warn">⚠ ${esc(p.revisar)}</span>` : "",
+  ].filter(Boolean).join(" · ");
+  const qty = local
+    ? `<span class="qty"><input type="number" min="0" value="${p.cantidad}" data-qty="${p.id}"></span>`
+    : `<span class="qty">×${p.cantidad}</span>`;
+  const price = local
+    ? `<span class="price">${p.importe != null ? eur(p.importe) + "<br>" + eur(p.precioUd) + "/ud" : ""}${p.pdf ? `<br><a href="/${esc(p.pdf)}" target="_blank">PDF</a>` : ""}</span>`
+    : "";
+  return `<div class="row ${p.estado}${p.revisar ? " revisar" : ""}">
+    <span class="badge ${p.estado}" data-estado="${p.id}" title="${local ? "Click para cambiar estado" : ""}">${ETIQUETA[p.estado]}</span>
+    <div><div class="prod">${esc(p.producto)}</div><div class="meta">${meta}</div></div>
+    <div class="right">${price}${qty}${local ? `<button class="del" data-del="${p.id}" title="Borrar">×</button>` : ""}</div>
+  </div>`;
+}
+
+function renderLista() {
+  const q = $("#q").value.trim().toLowerCase();
+  const vis = pedidos.filter((p) =>
+    (filtro === "todos" || p.estado === filtro) &&
+    (!q || [p.producto, p.ref, p.casaComercial, p.oc, p.notas].some((v) => (v || "").toLowerCase().includes(q))));
+  const rev = pedidos.filter((p) => p.revisar);
+  $("#revisar-wrap").style.display = rev.length ? "" : "none";
+  $("#revisar").innerHTML = rev.map(fila).join("");
+  const dias = {};
+  for (const p of vis) (dias[p.fecha] ||= []).push(p);
+  $("#lista").innerHTML = Object.keys(dias).sort().reverse().map((f) =>
+    `<div class="day">${fechaLarga(f)}</div>${dias[f].sort((a, b) => b.id - a.id).map(fila).join("")}`).join("")
+    || `<div class="empty">Nada que coincida.</div>`;
+}
+
+function renderGasto() {
+  if (!local) return;
+  const g = {};
+  for (const p of pedidos) if (p.importe) g[p.casaComercial] = (g[p.casaComercial] || 0) + p.importe;
+  $("#gasto").innerHTML = Object.entries(g).sort((a, b) => b[1] - a[1]).map(([k, v]) =>
+    `<div class="prov-head" style="font-weight:400"><span>${esc(k)}</span><span class="qty">${eur(v)}</span></div>`).join("")
+    || `<div class="empty">Sin precios todavía.</div>`;
+}
+
+function renderCatalogo() {
+  const q = $("#cat-q").value.trim().toLowerCase();
+  const hits = catalogo.filter((c) => !q || [c.nombre, c.ref, c.proveedor, ...(c.keywords || [])].some((v) => (v || "").toLowerCase().includes(q)));
+  $("#cat-list").innerHTML = hits.map((c) =>
+    `<button data-cat="${esc(c.id)}"><b>${esc(c.nombre)}</b><br><span class="meta"><span class="ref">${esc(c.ref)}</span> · ${esc(c.proveedor)}</span></button>`).join("");
+}
+
+function render() { renderStats(); renderViernes(); renderLista(); renderGasto(); }
+
+document.addEventListener("click", async (e) => {
+  const t = e.target.closest("[data-copy],[data-copy-prov],[data-estado],[data-del],[data-cat],#filtro button,#btn-add");
+  if (!t) return;
+  if (t.dataset.copy) { copiar(t.dataset.copy); flash(t); }
+  else if (t.dataset.copyProv) {
+    const items = pedidos.filter((p) => p.estado === "pendiente" && p.ref && !p.revisar && p.casaComercial === t.dataset.copyProv);
+    copiar(items.map((p) => `${p.ref}\t${p.cantidad}\t${p.producto}`).join("\n")); flash(t);
+  }
+  else if (t.dataset.estado && local) {
+    const p = pedidos.find((x) => x.id === +t.dataset.estado);
+    p.estado = ESTADOS[(ESTADOS.indexOf(p.estado) + 1) % 3];
+    if (p.estado === "recibido") p.fechaRecibido = new Date().toISOString().slice(0, 10);
+    render(); guardar();
+  }
+  else if (t.dataset.del && local) {
+    const p = pedidos.find((x) => x.id === +t.dataset.del);
+    if (!confirm(`¿Borrar «${p.producto}»?`)) return;
+    pedidos = pedidos.filter((x) => x !== p); render(); guardar();
+  }
+  else if (t.dataset.cat) {
+    const c = catalogo.find((x) => x.id === t.dataset.cat);
+    pedidos.push({ id: Math.max(0, ...pedidos.map((p) => p.id)) + 1, fecha: new Date().toISOString().slice(0, 10),
+      producto: c.nombre, ref: c.ref, casaComercial: c.proveedor, cantidad: 1, estado: "pendiente", notas: "" });
+    $("#add-box").style.display = "none"; $("#cat-q").value = "";
+    render(); guardar();
+  }
+  else if (t.id === "btn-add") {
+    const box = $("#add-box"); box.style.display = box.style.display === "none" ? "" : "none";
+    renderCatalogo(); $("#cat-q").focus();
+  }
+  else if (t.dataset.f) {
+    filtro = t.dataset.f;
+    document.querySelectorAll("#filtro button").forEach((b) => b.classList.toggle("on", b === t));
+    renderLista();
+  }
+});
+document.addEventListener("change", (e) => {
+  if (!e.target.dataset.qty) return;
+  const p = pedidos.find((x) => x.id === +e.target.dataset.qty);
+  p.cantidad = parseInt(e.target.value) || 0; render(); guardar();
+});
+$("#q").addEventListener("input", renderLista);
+$("#cat-q").addEventListener("input", renderCatalogo);
+
+(async () => {
+  try { local = (await fetch("/api/estado")).ok; } catch {}
+  if (local) document.body.classList.add("local", "editable");
+  const [ped, cat, meta] = await Promise.all(["pedidos.json", "catalogo.json", "meta.json"].map((f) =>
+    fetch(f, { cache: "no-store" }).then((r) => r.ok ? r.json() : null).catch(() => null)));
+  pedidos = ped || []; catalogo = cat || [];
+  $("#actualizado").textContent = local ? "Modo edición local · los cambios se guardan en data/pedidos.json"
+    : meta?.actualizado ? `Actualizado el ${fechaLarga(meta.actualizado.slice(0, 10))}` : "";
+  const lunes = new Date(); lunes.setDate(lunes.getDate() - ((lunes.getDay() + 6) % 7));
+  $("#mailto").href = `mailto:${CONTACTO}?subject=${encodeURIComponent(`[pedido] semana del ${corta(lunes.toISOString().slice(0, 10))}`)}` +
+    `&body=${encodeURIComponent("Producto — cantidad — referencia (si la sabes)\n\n")}`;
+  render();
+})();
+</script>
+</body>
+</html>
