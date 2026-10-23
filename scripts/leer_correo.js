@@ -20,16 +20,21 @@ function run(argv) {
   const iso = (d) => new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 19);
 
   const nuevos = [];
+  // Las solicitudes pueden acabar en spam (pasó con la primera prueba): se miran también ahí.
+  const SPAM = ["Spam", "Junk", "Junk E-mail", "Correo no deseado", "[Gmail]/Spam"];
   for (const acc of Mail.accounts()) {
-    let box;
-    try { box = acc.mailboxes.byName("INBOX"); box.name(); } catch (e) {
-      try { box = acc.mailboxes.byName("Inbox"); box.name(); } catch (e2) { continue; }
+    const buzones = [];
+    for (const nombre of ["INBOX", "Inbox", ...SPAM]) {
+      try { const b = acc.mailboxes.byName(nombre); b.name(); buzones.push(b); } catch (e) {}
     }
+    for (const box of buzones) {
+    const esSpam = SPAM.includes(box.name());
     const filtros = [
       { tipo: "solicitud", q: { _and: [{ subject: { _contains: "[pedido]" } }, { dateReceived: { _greaterThan: desde } }] } },
       { tipo: "oc", q: { _and: [{ subject: { _contains: "implantado" } }, { subject: { _contains: "OC-" } }, { dateReceived: { _greaterThan: desde } }] } },
     ];
     for (const { tipo, q } of filtros) {
+      if (esSpam && tipo !== "solicitud") continue;
       for (const m of box.messages.whose(q)()) {
         try {
         const id = m.messageId();
@@ -57,6 +62,7 @@ function run(argv) {
         nuevos.push(file);
         } catch (e) { nuevos.push("ERROR " + acc.name() + ": " + e.message); }
       }
+    }
     }
   }
   escribir(vistosPath, JSON.stringify([...visto], null, 2));

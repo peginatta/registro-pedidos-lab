@@ -434,5 +434,15 @@
     "fechaPedido": "2026-10-23",
     "entregaPrevista": "2026-10-30",
     "cantidadOC": 2.0
+  },
+  {
+    "id": 31,
+    "fecha": "2026-10-23",
+    "producto": "Filter tips 20µl low retention Neptune on rack x960",
+    "ref": "711178n",
+    "casaComercial": "TEKNOVAS, S.A.",
+    "cantidad": 2,
+    "estado": "pendiente",
+    "notas": "Solicitado por Paolo Ginatta (correo [pedido] de prueba)"
   }
 ]
