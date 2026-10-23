@@ -211,7 +211,8 @@ function fila(p) {
   const meta = [
     p.ref ? `<span class="ref">${esc(p.ref)}</span>` : `<span class="warn">sin referencia</span>`,
     esc(p.casaComercial),
-    p.oc ? `${esc(p.oc)}${p.entregaPrevista && p.estado === "pedido" ? ` · entrega ${corta(p.entregaPrevista)}` : ""}` : "",
+    p.oc ? `${esc(p.oc)}${p.estado !== "pedido" ? "" : p.enviado ? ` · 🚚 enviado ${corta(p.enviado)}, llega ${corta(p.entregaPrevista)}`
+      : p.enviadoParcial ? ` · envío parcial ${corta(p.enviadoParcial)}` : p.entregaPrevista ? ` · entrega ${corta(p.entregaPrevista)}` : ""}` : "",
     p.cantidadOC != null && p.cantidadOC !== p.cantidad ? `<span class="warn">OC: ×${p.cantidadOC}</span>` : "",
     p.notas ? `<span>${esc(p.notas)}</span>` : "",
     p.revisar ? `<span class="warn">⚠ ${esc(p.revisar)}</span>` : "",

@@ -5,6 +5,10 @@ con los pedidos de data/pedidos.json y los pasa a estado "pedido" con su OC y pr
 Todo lo de la OC queda en data/compras.json (privado). Las líneas que no casan con
 ningún pedido se guardan igual en compras.json como "sin registrar".
 
+Los avisos de envío de la Tienda Teknovas ("Pedido enviado totalmente") fijan la
+llegada al siguiente día laborable; llegado ese día el pedido pasa a "recibido".
+Si un proveedor no avisa, se da por recibido a los DIAS_HASTA_RECIBIDO de la entrega prevista.
+
 Las solicitudes [pedido] NO se procesan aquí (hace falta buscar referencias): se
 listan para que Claude las resuelva.
 
@@ -68,6 +72,40 @@ def campo_mail(cuerpo, etiqueta):
     return m.group(1).replace("￼", "").strip() if m else ""
 
 
+def siguiente_laborable(dia):
+    dia += timedelta(days=1)
+    while dia.weekday() >= 5:
+        dia += timedelta(days=1)
+    return dia
+
+
+def procesar_envio(msg, pedidos, ocs_conocidas, informe):
+    """Aplica un aviso de envío de Teknovas a los pedidos de su OC.
+
+    False (se reintenta en la próxima pasada) solo si la OC todavía no ha llegado y el
+    aviso es reciente; OCs sin pedidos registrados o muy antiguas se dan por despachadas.
+    """
+    oc = re.search(r"OC-\d+", msg["cuerpo"]).group(0)
+    suyos = [p for p in pedidos if p.get("oc") == oc]
+    if not suyos:
+        reciente = msg["fecha"][:10] > (date.today() - timedelta(days=30)).isoformat()
+        return oc in ocs_conocidas or not reciente
+    fecha = msg["fecha"][:10]
+    if "parcialmente" in msg["asunto"]:
+        for p in suyos:
+            p["enviadoParcial"] = fecha
+        informe.append(f"  ½ {oc} enviado parcialmente el {fecha} ({len(suyos)} artículos)")
+        return True
+    llegada = siguiente_laborable(date.fromisoformat(fecha)).isoformat()
+    for p in suyos:
+        p.update(enviado=fecha, entregaPrevista=llegada)
+        p.pop("enviadoParcial", None)
+        if p.pop("recibidoAuto", None):  # el aviso real corrige la fecha estimada
+            p["fechaRecibido"] = llegada
+    informe.append(f"  → {oc} enviado el {fecha}, llega {llegada} ({len(suyos)} artículos)")
+    return True
+
+
 def parsear_pdf(path):
     texto = "\n".join(p.extract_text() or "" for p in pypdf.PdfReader(path).pages)
     lineas_txt = texto.split("\n")
@@ -118,6 +156,8 @@ def main():
         if msg.get("tipo") == "solicitud":
             solicitudes.append(f.name)
             continue
+        if msg.get("tipo") == "envio":
+            continue  # después de las OCs, por si llegan el mismo día
         oc = re.search(r"OC-\d+", msg["asunto"]).group(0)
         sc = (re.search(r"SC-\d+", msg["asunto"]) or [""])[0]
         if oc in ya:
@@ -152,16 +192,26 @@ def main():
         ya.add(oc)
         shutil.move(f, PROCESADO / f.name)
 
+    for f in sorted(INBOX.glob("*_envio_*.json")):
+        if procesar_envio(leer_json(f, {}), pedidos, ya, informe):
+            shutil.move(f, PROCESADO / f.name)
+
+    hoy = date.today().isoformat()
     limite = (date.today() - timedelta(days=DIAS_HASTA_RECIBIDO)).isoformat()
     for p in pedidos:
-        if p["estado"] == "pedido" and p.get("entregaPrevista", "9999") < limite:
+        if p["estado"] != "pedido":
+            continue
+        if p.get("enviado") and p["entregaPrevista"] <= hoy:
+            p.update(estado="recibido", fechaRecibido=p["entregaPrevista"])
+            informe.append(f"  ✔ #{p['id']} {p['producto'][:45]} → recibido {p['entregaPrevista']} (aviso de envío)")
+        elif not p.get("enviado") and p.get("entregaPrevista", "9999") < limite:
             p.update(estado="recibido", fechaRecibido=p["entregaPrevista"], recibidoAuto=True)
             informe.append(f"  ↓ #{p['id']} {p['producto'][:45]} → recibido (entrega prevista {p['entregaPrevista']})")
 
     compras.sort(key=lambda c: c["fecha"])
     guardar_json(PEDIDOS, pedidos)
     guardar_json(COMPRAS, compras)
-    print("Órdenes de compra:" if informe else "Sin órdenes de compra nuevas.")
+    print("Correo procesado:" if informe else "Sin órdenes ni envíos nuevos.")
     print("\n".join(informe))
     if solicitudes:
         print("\nSolicitudes [pedido] por resolver (inbox/):")

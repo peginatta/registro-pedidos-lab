@@ -1,6 +1,7 @@
 // Lee Apple Mail y vuelca a inbox/ los correos relevantes que aún no se han procesado.
 //   - Asunto con "[pedido]"                 → solicitud (lo que hay que comprar)
 //   - Asunto "... OC-xxxxx ... implantado"  → orden de compra emitida (+ PDF a recibos/)
+//   - Tienda Teknovas "Pedido enviado ..."   → envío (total o parcial) de una OC
 // Uso: osascript -l JavaScript scripts/leer_correo.js <raiz-proyecto> <dias-atras>
 ObjC.import("Foundation");
 
@@ -32,6 +33,7 @@ function run(argv) {
     const filtros = [
       { tipo: "solicitud", q: { _and: [{ subject: { _contains: "[pedido]" } }, { dateReceived: { _greaterThan: desde } }] } },
       { tipo: "oc", q: { _and: [{ subject: { _contains: "implantado" } }, { subject: { _contains: "OC-" } }, { dateReceived: { _greaterThan: desde } }] } },
+      { tipo: "envio", q: { _and: [{ sender: { _contains: "teknovas" } }, { subject: { _beginsWith: "Pedido enviado" } }, { dateReceived: { _greaterThan: desde } }] } },
     ];
     for (const { tipo, q } of filtros) {
       if (esSpam && tipo !== "solicitud") continue;
@@ -51,8 +53,8 @@ function run(argv) {
             adjuntos.push("recibos/" + name);
           }
         }
-        const oc = (subject.match(/OC-\d+/) || [""])[0];
-        const slug = tipo === "oc" ? oc : id.replace(/[^A-Za-z0-9]/g, "").slice(0, 16);
+        const oc = ((tipo === "envio" ? m.content() : subject).match(/OC-\d+/) || [""])[0];
+        const slug = tipo === "solicitud" ? id.replace(/[^A-Za-z0-9]/g, "").slice(0, 16) : oc + (tipo === "envio" ? "_" + iso(fecha).slice(11, 19).replace(/:/g, "") : "");
         const file = "inbox/" + iso(fecha).slice(0, 10) + "_" + tipo + "_" + slug + ".json";
         escribir(root + "/" + file, JSON.stringify({
           tipo, messageId: id, de: m.sender(), fecha: iso(fecha), asunto: subject,

@@ -11,7 +11,7 @@
     "oc": "OC-253142",
     "fechaPedido": "2026-05-08",
     "entregaPrevista": "2026-05-11",
-    "cantidadOC": 2.0,
+    "cantidadOC": 2,
     "fechaRecibido": "2026-05-11",
     "recibidoAuto": true
   },
@@ -26,10 +26,10 @@
     "notas": "",
     "oc": "OC-253144",
     "fechaPedido": "2026-05-08",
-    "entregaPrevista": "2026-05-12",
-    "cantidadOC": 20.0,
-    "fechaRecibido": "2026-05-12",
-    "recibidoAuto": true
+    "entregaPrevista": "2026-05-11",
+    "cantidadOC": 20,
+    "fechaRecibido": "2026-05-11",
+    "enviado": "2026-05-08"
   },
   {
     "id": 3,
@@ -42,10 +42,10 @@
     "notas": "Falcon 15ml",
     "oc": "OC-253144",
     "fechaPedido": "2026-05-08",
-    "entregaPrevista": "2026-05-12",
-    "cantidadOC": 1.0,
-    "fechaRecibido": "2026-05-12",
-    "recibidoAuto": true
+    "entregaPrevista": "2026-05-11",
+    "cantidadOC": 1,
+    "fechaRecibido": "2026-05-11",
+    "enviado": "2026-05-08"
   },
   {
     "id": 4,
@@ -58,10 +58,10 @@
     "notas": "Falcon 50ml",
     "oc": "OC-253144",
     "fechaPedido": "2026-05-08",
-    "entregaPrevista": "2026-05-12",
-    "cantidadOC": 2.0,
-    "fechaRecibido": "2026-05-12",
-    "recibidoAuto": true
+    "entregaPrevista": "2026-05-11",
+    "cantidadOC": 2,
+    "fechaRecibido": "2026-05-11",
+    "enviado": "2026-05-08"
   },
   {
     "id": 5,
@@ -74,10 +74,10 @@
     "notas": "",
     "oc": "OC-253144",
     "fechaPedido": "2026-05-08",
-    "entregaPrevista": "2026-05-12",
-    "cantidadOC": 10.0,
-    "fechaRecibido": "2026-05-12",
-    "recibidoAuto": true
+    "entregaPrevista": "2026-05-11",
+    "cantidadOC": 10,
+    "fechaRecibido": "2026-05-11",
+    "enviado": "2026-05-08"
   },
   {
     "id": 7,
@@ -90,10 +90,10 @@
     "notas": "Placas 96 pocillos Falcon",
     "oc": "OC-253144",
     "fechaPedido": "2026-05-08",
-    "entregaPrevista": "2026-05-12",
-    "cantidadOC": 2.0,
-    "fechaRecibido": "2026-05-12",
-    "recibidoAuto": true
+    "entregaPrevista": "2026-05-11",
+    "cantidadOC": 2,
+    "fechaRecibido": "2026-05-11",
+    "enviado": "2026-05-08"
   },
   {
     "id": 8,
@@ -107,7 +107,7 @@
     "oc": "OC-253143",
     "fechaPedido": "2026-05-08",
     "entregaPrevista": "2026-05-11",
-    "cantidadOC": 1.0,
+    "cantidadOC": 1,
     "fechaRecibido": "2026-05-11",
     "recibidoAuto": true
   },
@@ -122,10 +122,10 @@
     "notas": "FBS inactivado",
     "oc": "OC-253144",
     "fechaPedido": "2026-05-08",
-    "entregaPrevista": "2026-05-12",
-    "cantidadOC": 2.0,
-    "fechaRecibido": "2026-05-12",
-    "recibidoAuto": true
+    "entregaPrevista": "2026-05-11",
+    "cantidadOC": 2,
+    "fechaRecibido": "2026-05-11",
+    "enviado": "2026-05-08"
   },
   {
     "id": 10,
@@ -139,9 +139,9 @@
     "oc": "OC-253212",
     "fechaPedido": "2026-05-08",
     "entregaPrevista": "2026-05-12",
-    "cantidadOC": 3.0,
+    "cantidadOC": 3,
     "fechaRecibido": "2026-05-12",
-    "recibidoAuto": true
+    "enviado": "2026-05-11"
   },
   {
     "id": 11,
@@ -155,9 +155,9 @@
     "oc": "OC-253212",
     "fechaPedido": "2026-05-08",
     "entregaPrevista": "2026-05-12",
-    "cantidadOC": 2.0,
+    "cantidadOC": 2,
     "fechaRecibido": "2026-05-12",
-    "recibidoAuto": true
+    "enviado": "2026-05-11"
   },
   {
     "id": 12,
@@ -171,9 +171,9 @@
     "oc": "OC-253221",
     "fechaPedido": "2026-05-08",
     "entregaPrevista": "2026-05-12",
-    "cantidadOC": 1.0,
+    "cantidadOC": 1,
     "fechaRecibido": "2026-05-12",
-    "recibidoAuto": true
+    "enviado": "2026-05-11"
   },
   {
     "id": 13,
@@ -186,10 +186,10 @@
     "notas": "Labtek chamber slides",
     "oc": "OC-253215",
     "fechaPedido": "2026-05-08",
-    "entregaPrevista": "2026-05-12",
-    "cantidadOC": 2.0,
-    "fechaRecibido": "2026-05-12",
-    "recibidoAuto": true
+    "entregaPrevista": "2026-06-05",
+    "cantidadOC": 2,
+    "fechaRecibido": "2026-06-05",
+    "enviado": "2026-06-04"
   },
   {
     "id": 14,
@@ -198,8 +198,9 @@
     "ref": "15913307",
     "casaComercial": "FISHER SCIENTIFIC, S.L.",
     "cantidad": 1,
-    "estado": "pendiente",
-    "notas": "Filtros 0.22 500ml"
+    "estado": "recibido",
+    "notas": "Filtros 0.22 500ml",
+    "fechaRecibido": "2026-10-23"
   },
   {
     "id": 15,
@@ -208,8 +209,9 @@
     "ref": "15933307",
     "casaComercial": "FISHER SCIENTIFIC, S.L.",
     "cantidad": 1,
-    "estado": "pendiente",
-    "notas": "Filtros 0.22 1L"
+    "estado": "recibido",
+    "notas": "Filtros 0.22 1L",
+    "fechaRecibido": "2026-10-23"
   },
   {
     "id": 16,
@@ -218,8 +220,9 @@
     "ref": "MB41902",
     "casaComercial": "NZYTECH",
     "cantidad": 1,
-    "estado": "pendiente",
-    "notas": "SYBR Green NZYTech - Presupuesto 1761"
+    "estado": "recibido",
+    "notas": "SYBR Green NZYTech - Presupuesto 1761",
+    "fechaRecibido": "2026-10-23"
   },
   {
     "id": 17,
@@ -232,10 +235,10 @@
     "notas": "3 packs de 24 labteks",
     "oc": "OC-259151",
     "fechaPedido": "2026-06-22",
-    "entregaPrevista": "2026-06-24",
-    "cantidadOC": 3.0,
-    "fechaRecibido": "2026-06-24",
-    "recibidoAuto": true
+    "entregaPrevista": "2026-07-20",
+    "cantidadOC": 3,
+    "fechaRecibido": "2026-07-20",
+    "enviado": "2026-07-17"
   },
   {
     "id": 18,
@@ -248,10 +251,10 @@
     "notas": "",
     "oc": "OC-259151",
     "fechaPedido": "2026-06-22",
-    "entregaPrevista": "2026-06-24",
-    "cantidadOC": 3.0,
-    "fechaRecibido": "2026-06-24",
-    "recibidoAuto": true
+    "entregaPrevista": "2026-07-20",
+    "cantidadOC": 3,
+    "fechaRecibido": "2026-07-20",
+    "enviado": "2026-07-17"
   },
   {
     "id": 19,
@@ -264,10 +267,10 @@
     "notas": "",
     "oc": "OC-259151",
     "fechaPedido": "2026-06-22",
-    "entregaPrevista": "2026-06-24",
-    "cantidadOC": 2.0,
-    "fechaRecibido": "2026-06-24",
-    "recibidoAuto": true
+    "entregaPrevista": "2026-07-20",
+    "cantidadOC": 2,
+    "fechaRecibido": "2026-07-20",
+    "enviado": "2026-07-17"
   },
   {
     "id": 20,
@@ -280,10 +283,10 @@
     "notas": "",
     "oc": "OC-259151",
     "fechaPedido": "2026-06-22",
-    "entregaPrevista": "2026-06-24",
-    "cantidadOC": 1.0,
-    "fechaRecibido": "2026-06-24",
-    "recibidoAuto": true
+    "entregaPrevista": "2026-07-20",
+    "cantidadOC": 1,
+    "fechaRecibido": "2026-07-20",
+    "enviado": "2026-07-17"
   },
   {
     "id": 21,
@@ -296,10 +299,10 @@
     "notas": "",
     "oc": "OC-259151",
     "fechaPedido": "2026-06-22",
-    "entregaPrevista": "2026-06-24",
-    "cantidadOC": 2.0,
-    "fechaRecibido": "2026-06-24",
-    "recibidoAuto": true
+    "entregaPrevista": "2026-07-20",
+    "cantidadOC": 2,
+    "fechaRecibido": "2026-07-20",
+    "enviado": "2026-07-17"
   },
   {
     "id": 22,
@@ -312,10 +315,10 @@
     "notas": "",
     "oc": "OC-259151",
     "fechaPedido": "2026-06-22",
-    "entregaPrevista": "2026-06-24",
-    "cantidadOC": 1.0,
-    "fechaRecibido": "2026-06-24",
-    "recibidoAuto": true
+    "entregaPrevista": "2026-07-20",
+    "cantidadOC": 1,
+    "fechaRecibido": "2026-07-20",
+    "enviado": "2026-07-17"
   },
   {
     "id": 23,
@@ -328,10 +331,10 @@
     "notas": "",
     "oc": "OC-259151",
     "fechaPedido": "2026-06-22",
-    "entregaPrevista": "2026-06-24",
-    "cantidadOC": 1.0,
-    "fechaRecibido": "2026-06-24",
-    "recibidoAuto": true
+    "entregaPrevista": "2026-07-20",
+    "cantidadOC": 1,
+    "fechaRecibido": "2026-07-20",
+    "enviado": "2026-07-17"
   },
   {
     "id": 24,
@@ -344,10 +347,10 @@
     "notas": "",
     "oc": "OC-268311",
     "fechaPedido": "2026-09-16",
-    "entregaPrevista": "2026-09-18",
-    "cantidadOC": 2.0,
-    "fechaRecibido": "2026-09-18",
-    "recibidoAuto": true
+    "entregaPrevista": "2026-09-30",
+    "cantidadOC": 2,
+    "fechaRecibido": "2026-09-30",
+    "enviado": "2026-09-29"
   },
   {
     "id": 25,
@@ -361,19 +364,9 @@
     "oc": "OC-268325",
     "fechaPedido": "2026-09-16",
     "entregaPrevista": "2026-09-23",
-    "cantidadOC": 1.0,
+    "cantidadOC": 1,
     "fechaRecibido": "2026-09-23",
     "recibidoAuto": true
-  },
-  {
-    "id": 26,
-    "fecha": "2026-09-16",
-    "producto": "T25 EasYFlask superficie recubierta Poli-D-Lisina",
-    "ref": "132703",
-    "casaComercial": "THERMO FISHER SCIENTIFIC",
-    "cantidad": 1,
-    "estado": "pendiente",
-    "notas": "Nueva referencia Thermo"
   },
   {
     "id": 27,
@@ -387,7 +380,7 @@
     "oc": "OC-268312",
     "fechaPedido": "2026-09-16",
     "entregaPrevista": "2026-09-18",
-    "cantidadOC": 2.0,
+    "cantidadOC": 2,
     "fechaRecibido": "2026-09-18",
     "recibidoAuto": true
   },
@@ -402,10 +395,10 @@
     "notas": "",
     "oc": "OC-268313",
     "fechaPedido": "2026-09-16",
-    "entregaPrevista": "2026-09-18",
-    "cantidadOC": 4.0,
-    "fechaRecibido": "2026-09-18",
-    "recibidoAuto": true
+    "entregaPrevista": "2026-09-17",
+    "cantidadOC": 4,
+    "fechaRecibido": "2026-09-17",
+    "enviado": "2026-09-16"
   },
   {
     "id": 29,
@@ -414,12 +407,14 @@
     "ref": "18068-015",
     "casaComercial": "Invitrogen (Thermo Fisher Scientific)",
     "cantidad": 1,
-    "estado": "pedido",
+    "estado": "recibido",
     "notas": "",
     "oc": "OC-272017",
     "fechaPedido": "2026-10-11",
-    "entregaPrevista": "2026-10-13",
-    "cantidadOC": 1.0
+    "entregaPrevista": "2026-10-14",
+    "cantidadOC": 1,
+    "fechaRecibido": "2026-10-23",
+    "enviado": "2026-10-13"
   },
   {
     "id": 30,
@@ -432,17 +427,8 @@
     "notas": "",
     "oc": "OC-273939",
     "fechaPedido": "2026-10-23",
-    "entregaPrevista": "2026-10-30",
-    "cantidadOC": 2.0
-  },
-  {
-    "id": 31,
-    "fecha": "2026-10-23",
-    "producto": "Filter tips 20µl low retention Neptune on rack x960",
-    "ref": "711178n",
-    "casaComercial": "TEKNOVAS, S.A.",
-    "cantidad": 2,
-    "estado": "pendiente",
-    "notas": "Solicitado por Paolo Ginatta (correo [pedido] de prueba)"
+    "entregaPrevista": "2026-10-26",
+    "cantidadOC": 2,
+    "enviado": "2026-10-23"
   }
 ]
