@@ -172,9 +172,12 @@ function flash(el) {
   setTimeout(() => { el.classList.remove("ok"); el.innerHTML = old; }, 1200);
 }
 
-async function guardar() {
+// Cada cambio viaja suelto y el servidor lo aplica sobre el archivo actual, así una pestaña
+// abierta hace rato no pisa lo que hayan escrito mientras tanto los scripts o Claude.
+async function guardar(cambio) {
   if (!local) return;
-  await fetch("/api/pedidos", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(pedidos) });
+  const r = await fetch("/api/cambio", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(cambio) });
+  if (r.ok) { pedidos = await r.json(); render(); }
 }
 
 function porProveedor(lista) {
@@ -273,21 +276,20 @@ document.addEventListener("click", async (e) => {
   }
   else if (t.dataset.estado && local) {
     const p = pedidos.find((x) => x.id === +t.dataset.estado);
-    p.estado = ESTADOS[(ESTADOS.indexOf(p.estado) + 1) % 3];
-    if (p.estado === "recibido") p.fechaRecibido = new Date().toISOString().slice(0, 10);
-    render(); guardar();
+    const campos = { estado: ESTADOS[(ESTADOS.indexOf(p.estado) + 1) % 3] };
+    if (campos.estado === "recibido") Object.assign(campos, { fechaRecibido: new Date().toISOString().slice(0, 10), recibidoAuto: null });
+    Object.assign(p, campos); render(); guardar({ op: "update", id: p.id, campos });
   }
   else if (t.dataset.del && local) {
     const p = pedidos.find((x) => x.id === +t.dataset.del);
     if (!confirm(`¿Borrar «${p.producto}»?`)) return;
-    pedidos = pedidos.filter((x) => x !== p); render(); guardar();
+    pedidos = pedidos.filter((x) => x !== p); render(); guardar({ op: "delete", id: p.id });
   }
   else if (t.dataset.cat) {
     const c = catalogo.find((x) => x.id === t.dataset.cat);
-    pedidos.push({ id: Math.max(0, ...pedidos.map((p) => p.id)) + 1, fecha: new Date().toISOString().slice(0, 10),
-      producto: c.nombre, ref: c.ref, casaComercial: c.proveedor, cantidad: 1, estado: "pendiente", notas: "" });
     $("#add-box").style.display = "none"; $("#cat-q").value = "";
-    render(); guardar();
+    guardar({ op: "add", pedido: { fecha: new Date().toISOString().slice(0, 10),
+      producto: c.nombre, ref: c.ref, casaComercial: c.proveedor, cantidad: 1, estado: "pendiente", notas: "" } });
   }
   else if (t.id === "btn-add") {
     const box = $("#add-box"); box.style.display = box.style.display === "none" ? "" : "none";
@@ -302,7 +304,7 @@ document.addEventListener("click", async (e) => {
 document.addEventListener("change", (e) => {
   if (!e.target.dataset.qty) return;
   const p = pedidos.find((x) => x.id === +e.target.dataset.qty);
-  p.cantidad = parseInt(e.target.value) || 0; render(); guardar();
+  p.cantidad = parseInt(e.target.value) || 0; render(); guardar({ op: "update", id: p.id, campos: { cantidad: p.cantidad } });
 });
 $("#q").addEventListener("input", renderLista);
 $("#cat-q").addEventListener("input", renderCatalogo);
