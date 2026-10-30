@@ -423,12 +423,13 @@
     "ref": "353072",
     "casaComercial": "TEKNOVAS, S.A.",
     "cantidad": 2,
-    "estado": "pedido",
+    "estado": "recibido",
     "notas": "",
     "oc": "OC-273939",
     "fechaPedido": "2026-10-23",
     "entregaPrevista": "2026-10-26",
     "cantidadOC": 2,
-    "enviado": "2026-10-23"
+    "enviado": "2026-10-23",
+    "fechaRecibido": "2026-10-26"
   }
 ]
