@@ -431,5 +431,15 @@
     "cantidadOC": 2,
     "enviado": "2026-10-23",
     "fechaRecibido": "2026-10-26"
+  },
+  {
+    "id": 31,
+    "fecha": "2026-11-19",
+    "producto": "THIAZOLYL BLUE TETRAZOLIUM BROMIDE (MTT)",
+    "ref": "M5655-500MG",
+    "casaComercial": "MERCK LIFE SCIENCE S.L.U.",
+    "cantidad": 2,
+    "estado": "pendiente",
+    "notas": ""
   }
 ]
