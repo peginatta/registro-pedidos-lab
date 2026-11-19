@@ -310,6 +310,13 @@ $("#q").addEventListener("input", renderLista);
 $("#cat-q").addEventListener("input", renderCatalogo);
 
 (async () => {
+  if (location.protocol === "file:") {
+    // Abierta con doble clic: el navegador no deja leer pedidos.json desde file://
+    $("#actualizado").innerHTML = `<b class="warn">Abierta como archivo: así no se pueden cargar los pedidos.</b> ` +
+      `Usa <a href="https://peginatta.github.io/registro-pedidos-lab/">la web pública</a> o arranca ` +
+      `<code>python3 scripts/servidor.py</code> y abre <a href="http://localhost:8765">localhost:8765</a>.`;
+    return;
+  }
   try { local = (await fetch("/api/estado")).ok; } catch {}
   if (local) document.body.classList.add("local", "editable");
   const [ped, cat, meta] = await Promise.all(["pedidos.json", "catalogo.json", "meta.json"].map((f) =>
