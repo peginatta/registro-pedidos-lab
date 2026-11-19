@@ -6,7 +6,19 @@
       "thiazolyl",
       "tetrazolium"
     ],
-    "nombre": "THIAZOLYL BLUE TETRAZOLIUM BROMIDE (MTT)",
+    "nombre": "Thiazolyl blue tetrazolium bromide (MTT) 98% — Thermo Scientific Chemicals",
+    "ref": "158990010",
+    "proveedor": "LIFE TECHNOLOGIES S.A",
+    "casaComercial": "LIFE TECHNOLOGIES"
+  },
+  {
+    "id": "mtt_merck",
+    "keywords": [
+      "mtt merck",
+      "m5655",
+      "mtt sigma"
+    ],
+    "nombre": "THIAZOLYL BLUE TETRAZOLIUM BROMIDE (MTT) 500mg — Merck (anterior)",
     "ref": "M5655-500MG",
     "proveedor": "MERCK LIFE SCIENCE S.L.U.",
     "casaComercial": "MERCK"
