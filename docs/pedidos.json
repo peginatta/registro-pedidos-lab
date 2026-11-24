@@ -441,5 +441,25 @@
     "cantidad": 2,
     "estado": "pendiente",
     "notas": ""
+  },
+  {
+    "id": 32,
+    "fecha": "2026-11-24",
+    "producto": "Random Primers",
+    "ref": "48190011",
+    "casaComercial": "LIFE TECHNOLOGIES",
+    "cantidad": 1,
+    "estado": "pendiente",
+    "notas": ""
+  },
+  {
+    "id": 33,
+    "fecha": "2026-11-24",
+    "producto": "Conjunto dNTP 100mM",
+    "ref": "a310297018",
+    "casaComercial": "TEKNOVAS, S.A.",
+    "cantidad": 1,
+    "estado": "pendiente",
+    "notas": ""
   }
 ]
