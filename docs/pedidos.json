@@ -433,16 +433,6 @@
     "fechaRecibido": "2026-10-26"
   },
   {
-    "id": 31,
-    "fecha": "2026-11-19",
-    "producto": "THIAZOLYL BLUE TETRAZOLIUM BROMIDE (MTT)",
-    "ref": "M5655-500MG",
-    "casaComercial": "MERCK LIFE SCIENCE S.L.U.",
-    "cantidad": 2,
-    "estado": "pendiente",
-    "notas": ""
-  },
-  {
     "id": 32,
     "fecha": "2026-11-24",
     "producto": "Random Primers",
@@ -606,6 +596,16 @@
     "producto": "Unidades filtro PES desechables 1000ml 0.22µm",
     "ref": "15933307",
     "casaComercial": "FISHER SCIENTIFIC, S.L.",
+    "cantidad": 1,
+    "estado": "pendiente",
+    "notas": ""
+  },
+  {
+    "id": 48,
+    "fecha": "2026-11-25",
+    "producto": "Microplaca 96 pocillos PS TC fondo plano estéril (50 uds)",
+    "ref": "353072",
+    "casaComercial": "TEKNOVAS, S.A.",
     "cantidad": 1,
     "estado": "pendiente",
     "notas": ""
