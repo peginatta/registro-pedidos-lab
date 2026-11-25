@@ -461,5 +461,119 @@
     "cantidad": 1,
     "estado": "pendiente",
     "notas": ""
+  },
+  {
+    "id": 34,
+    "fecha": "2026-11-25",
+    "producto": "Frasco cultivo 25cm² TC tapón rosca (200 uds)",
+    "ref": "353082",
+    "casaComercial": "TEKNOVAS, S.A.",
+    "cantidad": 1,
+    "estado": "pendiente",
+    "notas": ""
+  },
+  {
+    "id": 35,
+    "fecha": "2026-11-25",
+    "producto": "Frasco cultivo 75cm² TC tapón ventilado (100 uds)",
+    "ref": "00430641u",
+    "casaComercial": "TEKNOVAS, S.A.",
+    "cantidad": 2,
+    "estado": "pendiente",
+    "notas": ""
+  },
+  {
+    "id": 36,
+    "fecha": "2026-11-25",
+    "producto": "Pipeta serológica 25ml PS estéril (200 uds)",
+    "ref": "004489",
+    "casaComercial": "TEKNOVAS, S.A.",
+    "cantidad": 1,
+    "estado": "pendiente",
+    "notas": ""
+  },
+  {
+    "id": 37,
+    "fecha": "2026-11-25",
+    "producto": "Pipeta serológica 5ml PS estéril (200 uds)",
+    "ref": "004487",
+    "casaComercial": "TEKNOVAS, S.A.",
+    "cantidad": 2,
+    "estado": "pendiente",
+    "notas": ""
+  },
+  {
+    "id": 38,
+    "fecha": "2026-11-25",
+    "producto": "Pipeta serológica 10ml PS estéril (200 uds)",
+    "ref": "004488",
+    "casaComercial": "TEKNOVAS, S.A.",
+    "cantidad": 4,
+    "estado": "pendiente",
+    "notas": ""
+  },
+  {
+    "id": 39,
+    "fecha": "2026-11-25",
+    "producto": "Tubo centrífuga cónico 15ml Falcon (caja 500 uds)",
+    "ref": "430791",
+    "casaComercial": "TEKNOVAS, S.A.",
+    "cantidad": 1,
+    "estado": "pendiente",
+    "notas": ""
+  },
+  {
+    "id": 40,
+    "fecha": "2026-11-25",
+    "producto": "Filter tips 20µl low retention Neptune rack x960",
+    "ref": "711178n",
+    "casaComercial": "TEKNOVAS, S.A.",
+    "cantidad": 1,
+    "estado": "pendiente",
+    "notas": ""
+  },
+  {
+    "id": 41,
+    "fecha": "2026-11-25",
+    "producto": "Penicilina/Estreptomicina 10000 U/ml",
+    "ref": "a315140122",
+    "casaComercial": "TEKNOVAS, S.A.",
+    "cantidad": 1,
+    "estado": "pendiente",
+    "notas": ""
+  },
+  {
+    "id": 42,
+    "fecha": "2026-11-25",
+    "producto": "Value HI FBS (Heat Inactivated) 500ml",
+    "ref": "a3a5256801",
+    "casaComercial": "TEKNOVAS, S.A.",
+    "cantidad": 2,
+    "estado": "pendiente",
+    "notas": ""
+  },
+  {
+    "id": 43,
+    "fecha": "2026-11-25",
+    "producto": "DMSO puriss. p.a. 1L",
+    "ref": "34943-1L-M",
+    "casaComercial": "MERCK LIFE SCIENCE S.L.U.",
+    "cantidad": 1,
+    "estado": "pendiente",
+    "notas": ""
+  },
+  {
+    "id": 44,
+    "fecha": "2026-11-25",
+    "producto": "Maxwell RSC simplyRNA Tissue Kit",
+    "ref": "AS1340",
+    "casaComercial": "PROMEGA BIOTECH IBERICA, S.L.",
+    "cantidad": 2,
+    "estado": "pedido",
+    "notas": "",
+    "oc": "OC-278634",
+    "fechaPedido": "2026-11-24",
+    "entregaPrevista": "2026-12-03",
+    "cantidadOC": 2
   }
 ]
