@@ -599,5 +599,15 @@
     "cantidad": 1,
     "estado": "pendiente",
     "notas": ""
+  },
+  {
+    "id": 47,
+    "fecha": "2026-11-25",
+    "producto": "Unidades filtro PES desechables 1000ml 0.22µm",
+    "ref": "15933307",
+    "casaComercial": "FISHER SCIENTIFIC, S.L.",
+    "cantidad": 1,
+    "estado": "pendiente",
+    "notas": ""
   }
 ]
