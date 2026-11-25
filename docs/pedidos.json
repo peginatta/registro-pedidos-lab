@@ -575,5 +575,29 @@
     "fechaPedido": "2026-11-24",
     "entregaPrevista": "2026-12-03",
     "cantidadOC": 2
+  },
+  {
+    "id": 45,
+    "fecha": "2026-11-25",
+    "producto": "Tubo transferencia 12 ml estándar, estéril, en rack robótico",
+    "ref": "077214b",
+    "casaComercial": "TEKNOVAS, S.A.",
+    "cantidad": 1,
+    "estado": "pedido",
+    "notas": "",
+    "oc": "OC-278888",
+    "fechaPedido": "2026-11-25",
+    "entregaPrevista": "2026-12-04",
+    "cantidadOC": 1
+  },
+  {
+    "id": 46,
+    "fecha": "2026-11-25",
+    "producto": "Tubo centrífuga 50ml Falcon (20 bolsas x 25 tubos)",
+    "ref": "352070",
+    "casaComercial": "TEKNOVAS, S.A.",
+    "cantidad": 1,
+    "estado": "pendiente",
+    "notas": ""
   }
 ]

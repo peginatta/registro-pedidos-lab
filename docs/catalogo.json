@@ -575,5 +575,28 @@
     "ref": "8940006",
     "proveedor": "COMERCIAL MEDICA Y DE LABORATORIO, S.L.",
     "casaComercial": "COMERCIAL MEDICA"
+  },
+  {
+    "id": "tubo_transfer12",
+    "keywords": [
+      "transfer tube",
+      "tubo de transferencia"
+    ],
+    "nombre": "Tubo transferencia 12 ml estándar, estéril, en rack robótico",
+    "ref": "077214b",
+    "proveedor": "TEKNOVAS, S.A.",
+    "casaComercial": "TEKNOVAS"
+  },
+  {
+    "id": "filtro_pes_1000",
+    "keywords": [
+      "filtro 1000",
+      "filtros 1000",
+      "1000ml filtro"
+    ],
+    "nombre": "Unidades filtro PES desechables 1000ml 0.22µm",
+    "ref": "15933307",
+    "proveedor": "FISHER SCIENTIFIC, S.L.",
+    "casaComercial": "FISHER SCIENTIFIC"
   }
 ]
