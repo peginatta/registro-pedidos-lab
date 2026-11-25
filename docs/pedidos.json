@@ -459,8 +459,10 @@
     "ref": "353082",
     "casaComercial": "TEKNOVAS, S.A.",
     "cantidad": 1,
-    "estado": "pendiente",
-    "notas": ""
+    "estado": "pedido",
+    "notas": "",
+    "fechaPedido": "2026-11-25",
+    "cantidadOC": 1
   },
   {
     "id": 35,
@@ -469,8 +471,10 @@
     "ref": "00430641u",
     "casaComercial": "TEKNOVAS, S.A.",
     "cantidad": 2,
-    "estado": "pendiente",
-    "notas": ""
+    "estado": "pedido",
+    "notas": "",
+    "fechaPedido": "2026-11-25",
+    "cantidadOC": 2
   },
   {
     "id": 36,
@@ -479,8 +483,10 @@
     "ref": "004489",
     "casaComercial": "TEKNOVAS, S.A.",
     "cantidad": 1,
-    "estado": "pendiente",
-    "notas": ""
+    "estado": "pedido",
+    "notas": "",
+    "fechaPedido": "2026-11-25",
+    "cantidadOC": 1
   },
   {
     "id": 37,
@@ -489,8 +495,10 @@
     "ref": "004487",
     "casaComercial": "TEKNOVAS, S.A.",
     "cantidad": 2,
-    "estado": "pendiente",
-    "notas": ""
+    "estado": "pedido",
+    "notas": "",
+    "fechaPedido": "2026-11-25",
+    "cantidadOC": 2
   },
   {
     "id": 38,
@@ -499,8 +507,10 @@
     "ref": "004488",
     "casaComercial": "TEKNOVAS, S.A.",
     "cantidad": 4,
-    "estado": "pendiente",
-    "notas": ""
+    "estado": "pedido",
+    "notas": "",
+    "fechaPedido": "2026-11-25",
+    "cantidadOC": 4
   },
   {
     "id": 39,
@@ -509,8 +519,10 @@
     "ref": "430791",
     "casaComercial": "TEKNOVAS, S.A.",
     "cantidad": 1,
-    "estado": "pendiente",
-    "notas": ""
+    "estado": "pedido",
+    "notas": "",
+    "fechaPedido": "2026-11-25",
+    "cantidadOC": 1
   },
   {
     "id": 40,
@@ -519,8 +531,10 @@
     "ref": "711178n",
     "casaComercial": "TEKNOVAS, S.A.",
     "cantidad": 1,
-    "estado": "pendiente",
-    "notas": ""
+    "estado": "pedido",
+    "notas": "",
+    "fechaPedido": "2026-11-25",
+    "cantidadOC": 1
   },
   {
     "id": 41,
@@ -529,8 +543,10 @@
     "ref": "a315140122",
     "casaComercial": "TEKNOVAS, S.A.",
     "cantidad": 1,
-    "estado": "pendiente",
-    "notas": ""
+    "estado": "pedido",
+    "notas": "",
+    "fechaPedido": "2026-11-25",
+    "cantidadOC": 1
   },
   {
     "id": 42,
@@ -539,8 +555,10 @@
     "ref": "a3a5256801",
     "casaComercial": "TEKNOVAS, S.A.",
     "cantidad": 2,
-    "estado": "pendiente",
-    "notas": ""
+    "estado": "pedido",
+    "notas": "",
+    "fechaPedido": "2026-11-25",
+    "cantidadOC": 2
   },
   {
     "id": 43,
@@ -549,8 +567,10 @@
     "ref": "34943-1L-M",
     "casaComercial": "MERCK LIFE SCIENCE S.L.U.",
     "cantidad": 1,
-    "estado": "pendiente",
-    "notas": ""
+    "estado": "pedido",
+    "notas": "",
+    "fechaPedido": "2026-11-25",
+    "cantidadOC": 1
   },
   {
     "id": 44,
@@ -587,8 +607,10 @@
     "ref": "352070",
     "casaComercial": "TEKNOVAS, S.A.",
     "cantidad": 1,
-    "estado": "pendiente",
-    "notas": ""
+    "estado": "pedido",
+    "notas": "",
+    "fechaPedido": "2026-11-25",
+    "cantidadOC": 1
   },
   {
     "id": 47,
@@ -597,8 +619,10 @@
     "ref": "431097",
     "casaComercial": "TEKNOVAS, S.A.",
     "cantidad": 1,
-    "estado": "pendiente",
-    "notas": ""
+    "estado": "pedido",
+    "notas": "",
+    "fechaPedido": "2026-11-25",
+    "cantidadOC": 2
   },
   {
     "id": 48,
@@ -607,7 +631,9 @@
     "ref": "353072",
     "casaComercial": "TEKNOVAS, S.A.",
     "cantidad": 1,
-    "estado": "pendiente",
-    "notas": ""
+    "estado": "pedido",
+    "notas": "",
+    "fechaPedido": "2026-11-25",
+    "cantidadOC": 2
   }
 ]
